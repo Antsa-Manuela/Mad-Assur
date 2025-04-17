@@ -324,9 +324,9 @@
           </div>
         </div>
         <div class="rectangle-76"><span class="assurance">Assurance</span></div>
-        <div class="prendre-rdv">
-          <span class="prendre-rdv-77">Discutons !</span>
-        </div>
+        <a href="homechat.php?id=ici"><div class="prendre-rdv">
+        <span class="prendre-rdv-77">Discutons !</span>
+        </div></a>
         <div class="generaly"></div>
         <span class="aro-assurance"
           >L'assurance MAMA offre une couverture complète pour la santé, l’habitation et les véhicules. Elle se distingue par des tarifs compétitifs et des services personnalisés adaptés aux besoins des familles. Son Assur’Score évalue ses performances en matière de RSE, capital humain et expérience client. Une assistance 24/7 est disponible pour les sinistres et urgences. Enfin, elle propose un service de chat en ligne permettant aux clients d’échanger directement avec un conseiller.</span

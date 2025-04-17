@@ -1,12 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['nom'])) {
-    header('Location:index.php');
-    exit();
-}
-include('database.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,11 +29,11 @@ include('database.php');
                     echo '<div class="block"><a href="'.$assurance["lien"].'">';
                     
                     // Affichage de l'image si disponible
-/*                     if (!empty($assurance["image"])) {
-                        echo '<img src="'.$assurance["image"].'" alt="Image de '.$assurance["nom"].'" width="100" height="100">';
-                    } */
+                     if (!empty($assurance["image"])) {
+                        echo '<img src="'.$assurance["image"].'" alt="Image de '.$assurance["nom"].'" width="100" height="100" class="img">';
+                    }
 
-                    echo "<p>".$assurance["nom"]."</p>";
+/*                     echo "<p>".$assurance["nom"]."</p>"; */
                     echo "</a></div>";
                 }
             } else {
@@ -54,16 +45,16 @@ include('database.php');
             $selection = $bdd->query("SELECT id_assurances, nom, image, lien FROM assurances");
 
             while ($donnees = $selection->fetch()) {
-                echo '<div class="block"><a href="'.$donnees["lien"].'">';
+                echo '<a href="'.$donnees["lien"].'"><div class="block">';
                 
                 // Affichage de l'image si disponible
-/*                 if (!empty($donnees["image"])) {
-                    echo '<img src="'.$donnees["image"].'" alt="Image de '.$donnees["nom"].'">';
-                } */
+                 if (!empty($donnees["image"])) {
+                    echo '<img src="'.$donnees["image"].'" alt="Image de '.$donnees["nom"].'" class="img">';
+                }
 
                 // Affichage du nom
-                echo "<p>".$donnees["nom"]."</p>";
-                echo "</a></div>";
+/*                 echo "<p>".$donnees["nom"]."</p>"; */
+                echo "</div></a>";
             }
         }
     ?>

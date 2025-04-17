@@ -1,3 +1,6 @@
+body{
+  background-color: #e4fff4;
+}
 .main-containeraro {
     overflow: hidden;
   }
@@ -2895,7 +2898,7 @@
   }
   .generaly {
     position: absolute;
-    width: 300px;
+    width: 290px;
     height: 181px;
     top: 10.517px;
     left: 162px;/* 

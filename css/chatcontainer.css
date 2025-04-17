@@ -1,0 +1,252 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+  
+  .container-main-container {
+    overflow: hidden;
+  }
+  
+  .container-main-container,
+  .container-main-container * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .container-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* gap: 60px; */
+    position: relative;
+    width: 60vw;
+    /* padding: 7px 0 7px 0; */
+    margin: 0.5vw;
+    overflow: hidden;
+  }
+  .chat-pseudo-discution {
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    min-width: 0;
+    height: 165px;
+    background: #e1eef6;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .chat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    position: relative;
+    width: 123px;
+    margin: 28px 0 0 319px;
+    z-index: 1;
+  }
+  .chat-profile {
+    flex-shrink: 0;
+    position: relative;
+    width: 75px;
+    height: 75px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-17/QAOK40Y24d.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 2;
+    border-radius: 50%;
+  }
+  .chat-assurance-aro {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 24px;
+    color: #374a37;
+    font-family: Inter, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 3;
+  }
+  .chat-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 15px;
+    position: relative;
+    width: 246px;
+    padding: 20px 20px 20px 20px;
+    z-index: 4;
+  }
+  .chat-wrapper {
+    flex-shrink: 0;
+    position: relative;
+    width: 206px;
+    height: 50px;
+    z-index: 5;
+  }
+  .chat-wrapper-2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    position: absolute;
+    width: 206px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    z-index: 6;
+  }
+  .chat-img {
+    flex-shrink: 0;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-17/SRAescQFB2.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 7;
+    border-radius: 50%;
+  }
+  .chat-section-2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 10px;
+    position: relative;
+    width: 144px;
+    padding: 14px 20px 14px 20px;
+    background: #e1eef6;
+    z-index: 8;
+    overflow: hidden;
+    border-radius: 25px 40px 40px 0;
+  }
+  .chat-text-2 {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 15px;
+    color: #374a37;
+    font-family: Inter, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.523px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 9;
+  }
+  .chat-section-3 {
+    flex-shrink: 0;
+    position: relative;
+    width: 206px;
+    height: 50px;
+    z-index: 10;
+  }
+  .chat-chat-group-2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 12px;
+    position: absolute;
+    width: 206px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    z-index: 11;
+  }
+  .chat-box-2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 10px;
+    position: relative;
+    width: 144px;
+    padding: 14px 20px 14px 20px;
+    background: #374a37;
+    z-index: 12;
+    overflow: hidden;
+    border-radius: 40px 25px 0 40px;
+  }
+  .chat-text-3 {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 15px;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.523px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 13;
+  }
+  .chat-img-2 {
+    flex-shrink: 0;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-17/arctrR3U98.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 14;
+    border-radius: 50%;
+  }
+  .chat-chat-group-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    width: 600px;
+    height: 50px;
+    padding: 14px 20px 14px 20px;
+    background: #e1eef6;
+    z-index: 15;
+    overflow: hidden;
+    border-radius: 40px;
+  }
+  .chat-text-4 {
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 15px;
+    color: #808080;
+    font-family: Inter, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.523px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 16;
+  }
+  .chat-img-3 {
+    flex-shrink: 0;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-17/Hyu6Sttoz6.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 17;
+    overflow: hidden;
+  }
+  

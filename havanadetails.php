@@ -324,9 +324,9 @@
           </div>
         </div>
         <div class="rectangle-76"><span class="assurance">Assurance</span></div>
-        <div class="prendre-rdv">
-          <span class="prendre-rdv-77">Discutons !</span>
-        </div>
+        <a href="homechat.php?id=ici"><div class="prendre-rdv">
+        <span class="prendre-rdv-77">Discutons !</span>
+        </div></a>
         <div class="generaly"></div>
         <span class="aro-assurance"
           >Havana Assurance offre des solutions d’assurance adaptées aux particuliers et aux professionnels. Elle couvre divers domaines, notamment l’auto, l’habitation, la santé et la prévoyance. Son service client met l’accent sur l’accompagnement personnalisé et la réactivité. Havana propose également des outils digitaux pour faciliter la gestion des contrats et sinistres en ligne. Enfin, elle mise sur des engagements responsables avec des offres favorisant la solidarité et l’éco-responsabilité.</span

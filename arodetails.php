@@ -324,9 +324,9 @@
           </div>
         </div>
         <div class="rectangle-76"><span class="assurance">Assurance</span></div>
-        <div class="prendre-rdv">
-          <span class="prendre-rdv-77">Discutons !</span>
-        </div>
+        <a href="homechat.php?id=ici"><div class="prendre-rdv">
+        <span class="prendre-rdv-77">Discutons !</span>
+        </div></a>
         <div class="generaly"></div>
         <span class="aro-assurance"
           >Aro Assurance est une compagnie d’assurance qui propose des solutions

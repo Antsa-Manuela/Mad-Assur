@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 09 avr. 2025 à 14:24
+-- Généré le : jeu. 17 avr. 2025 à 12:52
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -41,27 +41,59 @@ CREATE TABLE `assurances` (
 --
 
 INSERT INTO `assurances` (`id_assurances`, `nom`, `email`, `mdp`, `image`, `lien`) VALUES
-(2, 'Assurance Ny Havana', 'havana@email.com', 'azerty', 'img/Aro.png', 'havana.php'),
-(3, 'Allianz Madagascar', 'allianz@email.com', 'azerty', 'img/Aro.png', 'allianz.php'),
-(4, 'Sanlam Madagascar', 'sanlam@email.com', 'azerty', 'img/Aro.png', 'sanlam.php'),
-(5, 'Ascoma Madagascar', 'ascoma@email.com', 'azerty', 'img/Aro.png', 'ascoma.php'),
-(6, 'Saham Assurance', 'saham@email.com', 'azerty', 'img/Aro.png', 'saham.php'),
-(7, 'Assurance MAMA', 'mama@email.com', 'azerty', 'img/Aro.png', 'mama.php'),
-(8, 'BNI Madagascar', 'bni@email.com', 'azerty', 'img/Aro.png', 'bni.php'),
-(9, 'Mutuelle d\'Assurance', 'mam@email.com', 'azerty', 'img/Aro.png', 'mam.php'),
-(10, 'Assurance AFAFI', 'afafi@email.com', 'azerty', 'img/Aro.png', 'afafi.php'),
-(11, 'Assurance VELON\'NY', 'velon@email.com', 'azerty', 'img/Aro.png', 'velon.php'),
-(12, 'Assurance FJKM', 'fjkm@email.com', 'azerty', 'img/Aro.png', 'fjkm.php'),
-(13, 'Assurance OTIV', 'otiv@email.com', 'azerty', 'img/Aro.png', 'otiv.php'),
-(14, 'Assurance CNaPS', 'cnaps@email.com', 'azerty', 'img/Aro.png', 'cnaps.php'),
-(15, 'Assurance APEM', 'apem@email.com', 'azerty', 'img/Aro.png', 'apem.php'),
-(16, 'Assurance OTIVTANA', 'oti@email.com', 'azerty', 'img/Aro.png', 'oti.php'),
-(17, 'Assurance SIPEM', 'sipem@email.com', 'azerty', 'img/Aro.png', 'sipem.php'),
-(18, 'Assurance MAFAMI', 'mafami@email.com', 'azerty', 'img/Aro.png', 'mafami.php'),
-(19, 'Assurance MICROCARE', 'micro@email.com', 'azerty', 'img/Aro.png', 'micro.php'),
-(20, 'Assurance TAF', 'taf@email.com', 'azerty', 'img/Aro.png', 'taf.php'),
+(2, 'Assurance Ny Havana', 'havana@email.com', 'azerty', 'img/Havana.png', 'havana.php'),
+(3, 'Allianz Madagascar', 'allianz@email.com', 'azerty', 'img/Allianz.png', 'allianz.php'),
+(4, 'Sanlam Madagascar', 'sanlam@email.com', 'azerty', 'img/Sanlam.png', 'sanlam.php'),
+(5, 'Ascoma Madagascar', 'ascoma@email.com', 'azerty', 'img/ASCOMA.png', 'ascoma.php'),
+(6, 'Saham Assurance', 'saham@email.com', 'azerty', 'img/SAHAM.png', 'saham.php'),
+(7, 'Assurance MAMA', 'mama@email.com', 'azerty', 'img/MAMA.png', 'mama.php'),
+(8, 'BNI Madagascar', 'bni@email.com', 'azerty', 'img/BNI.png', 'bni.php'),
+(10, 'Assurance AFAFI', 'afafi@email.com', 'azerty', 'img/AFAFI.gif', 'afafi.php'),
+(12, 'Assurance FJKM', 'fjkm@email.com', 'azerty', 'img/FJKM.png', 'fjkm.php'),
+(13, 'Assurance OTIV', 'otiv@email.com', 'azerty', 'img/OTIV.png', 'otiv.php'),
+(14, 'Assurance CNaPS', 'cnaps@email.com', 'azerty', 'img/CNaPS.png', 'cnaps.php'),
+(15, 'Assurance APEM', 'apem@email.com', 'azerty', 'img/APEM.jpg', 'apem.php'),
+(16, 'Assurance OTIVTANA', 'oti@email.com', 'azerty', 'img/OTIVTana.jpg', 'oti.php'),
+(17, 'Assurance SIPEM', 'sipem@email.com', 'azerty', 'img/SIPEM.webp', 'sipem.php'),
 (21, 'Assurances ARO', 'aro@email.com', 'azerty', 'img/Aro.png', 'aro.php'),
-(22, 'Assurance Havana', 'havana@email.com', 'azerty', 'img/Aro.png', 'havana.php');
+(23, 'SAMB\'A assurances', 'samba@email.com', 'azerty', 'img/SAMBA.png', 'samba.php'),
+(24, 'BOA assurance', 'boa@email.com', 'azerty', 'img/BOA.png', 'boa.php'),
+(26, 'Bureau de Souscripti', 'bsa@email.com', 'azerty', 'img/bsa.png', 'bsa.php'),
+(28, 'BSA Madagascar Gras ', 'bsa@email.com', 'azerty', 'img/bsa.png', 'bsa.php'),
+(30, 'BSA Madagascar Gras ', 'bsa@email.com', 'azerty', 'img/bsa.png', 'bsa.php'),
+(31, 'Assurances Mitsinjo', 'mitsinjo@email.com', 'azerty', 'img/mitsinjo.jpg', 'mitsinjo.php'),
+(33, 'BSA Madagascar', 'bsa@email.com', 'azerty', 'img/BSA.png', 'bsa.php'),
+(34, 'BAOBAB Assurance', 'baobab@email.com', 'azerty', 'img/baobab.png', 'baobab.php'),
+(35, 'Assurance KOBABY', 'kobaby@email.com', 'azert', 'img/KOBABY.png', 'kobaby.php');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `expediteur_id` int(11) NOT NULL,
+  `expediteur_type` enum('user','assurance') NOT NULL,
+  `destinataire_id` int(11) NOT NULL,
+  `destinataire_type` enum('user','assurance') NOT NULL,
+  `contenu` text NOT NULL,
+  `date_envoi` datetime DEFAULT current_timestamp(),
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `messages`
+--
+
+INSERT INTO `messages` (`id`, `expediteur_id`, `expediteur_type`, `destinataire_id`, `destinataire_type`, `contenu`, `date_envoi`, `message`) VALUES
+(1, 1, 'user', 2, 'assurance', 'bbbbbbonjour', '2025-04-17 12:32:34', ''),
+(2, 1, 'user', 21, 'assurance', 'bonjour', '2025-04-17 12:33:57', ''),
+(3, 1, 'user', 21, 'assurance', '', '2025-04-17 12:51:10', 'y a t il quelqu\'un?'),
+(4, 1, 'user', 2, 'assurance', '', '2025-04-17 13:39:39', 'bonjour encore'),
+(5, 2, 'user', 21, 'assurance', 'hello world', '2025-04-17 13:47:41', ''),
+(6, 2, 'user', 1, 'assurance', 'hé oh', '2025-04-17 13:47:41', '');
 
 -- --------------------------------------------------------
 
@@ -81,7 +113,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `nom`, `email`, `mdp`) VALUES
-(1, 'Societe', 'email@email.com', 'azerty');
+(1, 'Societe', 'email@email.com', 'azerty'),
+(2, 'startup', 'email@mail.com', 'qsdfgh');
 
 --
 -- Index pour les tables déchargées
@@ -92,6 +125,12 @@ INSERT INTO `users` (`id_users`, `nom`, `email`, `mdp`) VALUES
 --
 ALTER TABLE `assurances`
   ADD PRIMARY KEY (`id_assurances`);
+
+--
+-- Index pour la table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `users`
@@ -107,13 +146,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `assurances`
 --
 ALTER TABLE `assurances`
-  MODIFY `id_assurances` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_assurances` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT pour la table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

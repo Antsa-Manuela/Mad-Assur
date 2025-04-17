@@ -324,19 +324,12 @@
           </div>
         </div>
         <div class="rectangle-76"><span class="assurance">Assurance</span></div>
-        <div class="prendre-rdv">
-          <span class="prendre-rdv-77">Discutons !</span>
-        </div>
+        <a href="homechat.php?id=ici"><div class="prendre-rdv">
+        <span class="prendre-rdv-77">Discutons !</span>
+        </div></a>
         <div class="generaly"></div>
         <span class="aro-assurance"
-          >Aro Assurance est une compagnie d’assurance qui propose des solutions
-          pour les particuliers et les entreprises. Elle couvre plusieurs
-          domaines, notamment l’assurance automobile, habitation, santé et
-          professionnelle. L’entreprise se distingue par son engagement envers la
-          satisfaction client et une gestion rapide des sinistres. Aro Assurance
-          intègre également des critères de responsabilité sociétale (RSE) dans
-          ses offres et services. Enfin, elle mise sur la digitalisation pour
-          faciliter la souscription et le suivi des contrats.</span
+          >Allianz Madagascar est une filiale du groupe Allianz, un des plus grands assureurs au monde. Présente à Madagascar, elle propose une gamme variée de produits d’assurance : auto, habitation, santé, voyages, responsabilité civile, ainsi que des assurances pour les entreprises. Elle est reconnue pour sa solidité financière, sa fiabilité et son accompagnement client. Elle combine expertise locale et standards internationaux.</span
         ><span class="n-siret">N° SIRET - 009 987 367 00014</span>
       </div>
     
