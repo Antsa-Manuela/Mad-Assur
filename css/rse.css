@@ -1,0 +1,48 @@
+*{
+  font-family: 'Open Sans';
+}
+.diagramme {
+  margin: 30px auto;
+  width: 80%;
+}
+
+.barre {
+  background: #ddd;
+  margin: 15px 0;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.barre-forte {
+  height: 100%;
+  background-color: #4CAF50;
+  color: #fff;
+  padding-left: 10px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+.barre-faible {
+  height: 100%;
+  background-color: #f44336;
+  color: #fff;
+  padding-left: 10px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+.details {
+  background: #fff;
+  border-left: 5px solid #4CAF50;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.details:nth-of-type(4) { /* pour les points faibles */
+  border-left-color: #f44336;
+}
+
+.details ul {
+  margin: 10px 0 0 20px;
+}

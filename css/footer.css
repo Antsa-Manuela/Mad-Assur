@@ -5,11 +5,11 @@
       "Source Han Sans CN", sans-serif;
   }
 
-  img{
+/*   img{
     position: absolute;
     top: 10%;
     border-radius: 1vw;
-  }
+  } */
   .main-containerfoot {
     overflow: hidden;
   }
@@ -208,7 +208,7 @@
     text-align: left;
     z-index: 19;
   }
-  .details {
+  .detailsfooter {
     position: relative;
     width: 689px;
     height: 73px;

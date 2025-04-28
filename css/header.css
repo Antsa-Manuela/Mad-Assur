@@ -5,12 +5,12 @@
       "Source Han Sans CN", sans-serif;
   }
   
-  img{
+/*   img{
     display: flex;
     position: absolute;
     top: 8vw;
     left: 2vw;
-  }
+  } */
   
   .main-container,
   .main-container * {
@@ -40,12 +40,68 @@
     top: -10px;
     right: -10px;
     left: -10px;
-
-    box-shadow:0.7vw 0vw 1vw #949494;
     width: 150%;
     height: 259px;
+    box-shadow:0 0 0.5vw #5d705d;
     background: #e4fff4;
   }
+        /* Style pour la zone de filtres */
+        .filtre-container {
+          padding: 20px;
+          border-top: 1px solid #ccc;
+          margin-top: 5.5vw;
+      }
+      .filtre-container form {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+      }
+      .filtre-container input[type="text"],
+      .filtre-container input[type="number"],
+      .filtre-container select {
+          padding: 8px 12px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-size: 14px;
+      }
+      .btn-action {
+          padding: 8px 15px;
+          background-color: #2e8b57;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          font-size: 14px;
+      }
+      .btn-action:hover {
+          background-color: #246c45;
+      }
+      .reset {
+          background-color: #c0392b;
+      }
+      .reset:hover {
+          background-color: #a5281f;
+      }
+      /* Animation fade-in */
+      #contenu {
+          animation: fadeIn 0.8s ease;
+      }
+      @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+      /* Message résultats */
+      .result-count {
+          text-align: center;
+          margin-top: 10px;
+          font-size: 16px;
+          color: #333;
+          margin-top: 3vw;
+      }
+
   .flex-row-af {
     position: relative;
     left: 18%;

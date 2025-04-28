@@ -12,7 +12,7 @@
               >©Copyright 2025. All Rights Reserved. Mad(Assur) - Powered By G2 GL L3</span
             >
             <div class="rectanglefoot">
-            <img src="img/logoin.png" alt="logomadassur" width="20%"></div>
+            <img src="img/logoin.png" alt="logomadassur" width="20%" style="position: absolute; top: 10%; border-radius: 1vw; left:1.5vw;"></div>
             <div class="autres">
               <div class="section">
                 <div class="nav-bar-pied">
@@ -28,7 +28,7 @@
                   assurance durable et responsable.</span
                 >
               </div>
-              <div class="details">
+              <div class="detailsfooter">
                 <div class="flex-row-dab">
                   <div class="mail">
                     <span class="contact-email">contact@madassur.mg<br /></span>

@@ -1,34 +1,29 @@
 <?php
-    //Démarrer la session
-    session_start();
-    include('database.php');
-    if (!empty($_POST)) {
-        if (isset($_POST["email"], $_POST["mdp"]) && !empty($_POST["email"]) && !empty($_POST["mdp"]) ){
-            $email = $_POST['email'];
-            $password = $_POST['mdp'];
-            $requete = $bdd->query("SELECT * FROM assurances WHERE email = '".$email."' AND mdp = '".$password."'");
-            $i=0;
-            while ($donnees=$requete->fetch()) {
-                //On stocke dans $_SESSION les informations de l'utilisateur
-                $_SESSION["email"]=$donnees["email"];/* 
-                $_SESSION["number"]=$donnees["number"];
-                $_SESSION["pseudo"]=$donnees["pseudo"]; */
-                $_SESSION["mdp"]=$donnees["password"];
-                $i++;
-            }
-            if ($i==1) {/* 
-                header("Location:home.php"); */
-                header("Location:homeassurance.php");
-            }
-            else {
-                header ("Location:signin.php");
-            }
+session_start();
+require 'database.php';
 
-            //connecter l'utilisateur
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $mdp = $_POST['mdp'];
 
-        }
-        else {
-            die("Le formulaire est incomplet");
+    if ($email && !empty($mdp)) {
+        $stmt = $bdd->prepare("SELECT * FROM assurances WHERE email = ? LIMIT 1");
+        $stmt->execute([$email]);
+        $assur = $stmt->fetch();
+
+        if ($assur && $mdp === $assur['mdp']) { // À remplacer par password_verify() en production
+            $_SESSION = [
+                'id_assurances' => $assur['id_assurances'],
+                'email' => $assur['email'],
+                'nom' => $assur['nom']
+            ];
+            header('Location: homechatentreprise.php');
+            exit();
         }
     }
+    header('Location: loginassociation.php?erreur=1');
+    exit();
+}
+header('Location: loginassociation.php');
+exit();
 ?>
