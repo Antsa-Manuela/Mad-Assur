@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color: var(--bg);
+    background-color: var(--white);
     height: 100vh;
     display: flex;
     color: var(--text-dark);
@@ -24,24 +24,37 @@ body {
 
 .sidebar {
     width: 300px;
-    background-color: var(--primary);
+    background-color: var(--bg);
     color: var(--white);
     overflow-y: auto;
     padding: 20px;
+}
+
+.logo-container {
+    flex: 0 0 120px;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
 }
 
 .contact {
     display: flex;
     align-items: center;
     padding: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     cursor: pointer;
-    border-radius: 10px;
+    /* border-radius: 5px; */
+    border-top: solid 1px var(--gray-light);
     transition: background 0.2s;
+    color: var(--primary);
 }
 
 .contact:hover, .contact.active {
-    background-color: var(--accent);
+    background-color: var(--white);
 }
 
 .contact img {
@@ -61,6 +74,7 @@ body {
     padding: 15px;
     background-color: var(--white);
     border-bottom: 1px solid var(--gray-light);
+    color: #3d3d3d33;
 }
 
 .chat-box {
@@ -89,20 +103,20 @@ body {
 }
 
 /* Message envoyé (à droite) */
-.from-me {
+/* .from-me {
     background: var(--accent);
     color: white;
     margin-left: auto;
     border-bottom-right-radius: 4px;
-}
+} */
 
 /* Message reçu (à gauche) */
-.from-other {
+/* .from-other {
     background: var(--primary);
     color: white;
     margin-right: auto;
     border-bottom-left-radius: 4px;
-}
+} */
 
 /* Contenu du message */
 .message-content {
@@ -118,13 +132,13 @@ body {
     margin-top: 4px;
     display: block;
     text-align: right;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--primary);
 }
 
 .chat-form {
     display: flex;
     padding: 10px;
-    background: var(--white);
+    background: var(--bg);
     border-top: 1px solid var(--gray-light);
 }
 
@@ -149,18 +163,31 @@ body {
 }
 
 .from-me {
-    background-color: var(--accent);
+    background-color: var(--primary);
     color: var(--white);
     margin-left: auto;
     border-bottom-right-radius: 0;
 }
 
 .from-other {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--bg);
+    color: var(--primary);
     margin-right: auto;
     border-bottom-left-radius: 0;
 }
+.from-me-assurance {
+    background-color: var(--bg);
+    color: var(--primary);
+    margin-right: auto;
+    border-bottom-left-radius: 0;
+}
+.from-other-assurance {
+    background-color: var(--primary);
+    color: var(--white);
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+}
+
 /* Bouton de déconnexion */
 .logout-btn {
     position: fixed;

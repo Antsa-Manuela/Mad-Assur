@@ -27,6 +27,11 @@ $contacts = $contacts->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="sidebar">
+        <div class="logo-container">
+            <a href="#">
+                <img src="img/logoin.png" alt="Logo Mad(Assur)" class="logo">
+            </a>
+        </div>
         <?php foreach ($contacts as $contact): ?>
             <div class="contact" onclick="loadMessages(<?= $contact['id_users'] ?>, 'user')">
                 <img src="<?= htmlspecialchars($contact['image']) ?>" alt="">
@@ -41,7 +46,7 @@ $contacts = $contacts->fetchAll(PDO::FETCH_ASSOC);
         
         <form class="chat-form" onsubmit="sendMessage(event)">
             <textarea id="message" placeholder="Écrivez un message..."></textarea>
-            <button type="submit">→</button>
+            <button type="submit">🗨️</button>
         </form>
     </div>
 
@@ -63,7 +68,7 @@ $contacts = $contacts->fetchAll(PDO::FETCH_ASSOC);
                     
                     data.messages.forEach(msg => {
                     const div = document.createElement("div");
-                    div.className = 'message ' + (msg.expediteur_type === 'user' ? 'from-me' : 'from-other');
+                    div.className = 'message ' + (msg.expediteur_type === 'user' ? 'from-me-assurance' : 'from-other-assurance');
                     div.innerHTML = `
                         <div class="message-content">${msg.message.replace(/\n/g, '<br>')}</div>
                         <div class="message-time">

@@ -19,6 +19,11 @@ $contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
 </head>
 <body>
     <div class="sidebar">
+        <div class="logo-container">
+            <a href="home.php?id=ici">
+                <img src="img/logoin.png" alt="Logo Mad(Assur)" class="logo">
+            </a>
+        </div>
         <?php foreach ($contacts as $contact): ?>
             <div class="contact" onclick="loadMessages(<?= $contact['id_assurances'] ?>, 'assurance')">
                 <img src="<?= $contact['image'] ?>" alt="">
@@ -32,7 +37,7 @@ $contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
         <div class="chat-box" id="chat-box"></div>
         <form class="chat-form" onsubmit="sendMessage(event)">
             <textarea id="message" placeholder="Écrivez un message..."></textarea>
-            <button>→</button>
+            <button>🗨️</button>
         </form>
     </div>
 
