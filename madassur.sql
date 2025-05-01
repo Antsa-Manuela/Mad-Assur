@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 01 mai 2025 à 12:55
+-- Généré le : jeu. 01 mai 2025 à 15:20
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -126,7 +126,26 @@ INSERT INTO `messages` (`id`, `expediteur_id`, `expediteur_type`, `destinataire_
 (40, 1, 'user', 2, 'assurance', '2025-05-01 12:07:01', '......'),
 (41, 2, 'assurance', 1, 'user', '2025-05-01 13:06:33', 'je vois'),
 (42, 1, 'user', 2, 'assurance', '2025-05-01 13:33:57', 'vous voyez'),
-(44, 1, 'user', 2, 'assurance', '2025-05-01 13:40:50', 'a,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezv');
+(44, 1, 'user', 2, 'assurance', '2025-05-01 13:40:50', 'a,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezva,kndvqcvajvfdavfdvezv'),
+(45, 2, 'assurance', 1, 'user', '2025-05-01 14:49:37', 'yo'),
+(46, 2, 'assurance', 1, 'user', '2025-05-01 14:54:18', 'bonjour je suis...'),
+(47, 1, 'user', 3, 'assurance', '2025-05-01 15:28:02', 'bonjour'),
+(48, 1, 'user', 4, 'assurance', '2025-05-01 15:28:02', 'bonjour'),
+(49, 1, 'user', 5, 'assurance', '2025-05-01 15:28:02', 'bonjour'),
+(50, 1, 'user', 6, 'assurance', '2025-05-01 15:28:02', 'bonjour'),
+(51, 1, 'user', 7, 'assurance', '2025-05-01 15:28:02', 'bonjour'),
+(52, 1, 'user', 8, 'assurance', '2025-05-01 15:28:02', 'bonjour'),
+(53, 1, 'user', 10, 'assurance', '2025-05-01 15:35:32', 'bonjour'),
+(54, 1, 'user', 12, 'assurance', '2025-05-01 15:35:32', 'bonjour'),
+(55, 1, 'user', 13, 'assurance', '2025-05-01 15:35:32', 'bonjour'),
+(56, 1, 'user', 14, 'assurance', '2025-05-01 15:35:32', 'bojnjour'),
+(57, 1, 'user', 15, 'assurance', '2025-05-01 15:35:32', 'bonjour'),
+(58, 1, 'user', 16, 'assurance', '2025-05-01 15:35:32', 'bonjour'),
+(59, 3, 'assurance', 1, 'user', '2025-05-01 15:37:06', 'Bonjour, voici le représentant de l\'assurance Allianz que puis-je faire pour vous?'),
+(60, 1, 'user', 3, 'assurance', '2025-05-01 16:01:09', 'bkjgjhgvj'),
+(61, 3, 'assurance', 1, 'user', '2025-05-01 16:01:27', 'oui'),
+(62, 1, 'user', 3, 'assurance', '2025-05-01 16:11:56', 'alors'),
+(63, 3, 'assurance', 1, 'user', '2025-05-01 16:12:07', 'ça va');
 
 -- --------------------------------------------------------
 
@@ -186,7 +205,7 @@ ALTER TABLE `assurances`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT pour la table `users`
