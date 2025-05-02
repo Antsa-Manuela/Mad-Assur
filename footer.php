@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <footer class="footer-container">
+    <footer id="footer-container">
         <div class="footer-background">
             <img src="img/logoin.png" alt="Logo Mad(Assur)" class="footer-logo">
             

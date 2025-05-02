@@ -18,7 +18,7 @@
         <input type="password" name="mdp" placeholder="Mot de passe" id="mdp" required>
         <input type="submit" value="Se connecter">
     <p>Pas de compte? S'inscrire <a href="signin.php?id=ici">ici</a></p>
-    <p>Se connecter en tant qu' <a href="loginassociation.php?id=ici">association</a></p>
+    <p>Se connecter en tant qu' <a href="loginassociation.php?id=ici">assurance</a></p>
     </form>
 </fieldset>
 <!-- <div id="rectangle"></div> -->

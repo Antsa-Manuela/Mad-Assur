@@ -8,14 +8,14 @@
 }
 
 /* Reset */
-.footer-container * {
+#footer-container * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 /* Base Styles */
-.footer-container {
+#footer-container {
   position: relative;
   width: 100%;
   color: var(--light-color);
@@ -75,6 +75,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  color: #e4fff4;
 }
 
 .info-group, .legal-group {
@@ -144,9 +145,9 @@
 
 /* Copyright */
 .copyright {
-  position: absolute;
+  /* position: absolute;
   bottom: 1.5rem;
-  left: 2rem;
+  left: 2rem; */
   font-size: 0.875rem;
   color: var(--light-color);
 }

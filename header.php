@@ -38,9 +38,9 @@ sort($liste_services);
             <nav class="main-nav">
                 <a href="#" class="nav-item">Nos services</a>
                 <a href="#" class="nav-item">Partenaires</a>
-                <a href="#" class="nav-item">A propos</a>
+                <a href="#footer-container" class="nav-item">A propos</a>
                 <a href="#" class="nav-item">Nous rejoindre</a>
-                <a href="#" class="nav-item">Contact</a>
+                <a href="#footer-container" class="nav-item">Contact</a>
             </nav>
 
             <div class="search-container">

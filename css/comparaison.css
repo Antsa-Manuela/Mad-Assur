@@ -256,3 +256,65 @@
         font-size: 0.9rem;
     }
 }
+/* Styles pour les services */
+.services-section {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    color: #333;
+}
+
+.services-section h4 {
+    margin-bottom: 10px;
+    color: var(--primary);
+    font-size: 1rem;
+}
+h4{
+    text-align: center;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.service-unavailable {
+    opacity: 0.6;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.star.filled {
+    color: #FFD700; /* Couleur or */
+}
+
+.rating-value {
+    margin-left: 5px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.not-available {
+    font-size: 0.8rem;
+    color: #999;
+    font-style: italic;
+}
+
+.average-score {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 5px;
+    color: #555;
+}
