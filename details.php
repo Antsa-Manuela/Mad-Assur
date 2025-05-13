@@ -324,6 +324,42 @@ $services = array_map('trim', explode(',', $assurance['services']));
                 width: 100%;
             }
         }
+        .service-tag {
+        position: relative;
+    }    
+    .price-tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 10;
+        margin-bottom: 5px;
+    }
+    
+    .price-tooltip:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: var(--primary) transparent transparent transparent;
+    }
+    
+    .service-tag:hover .price-tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
     </style>
 </head>
 <body>
@@ -355,9 +391,14 @@ $services = array_map('trim', explode(',', $assurance['services']));
             <div class="services-container">
                 <!-- <h3 class="services-title">Services proposés</h3> -->
                 <div class="services-flex">
-                    <?php foreach ($services as $service): ?>
+                    <?php 
+                    $services_prices = json_decode($assurance['services_prices'], true);
+                    foreach ($services as $service): 
+                        $price = isset($services_prices[$service]) ? $services_prices[$service] : 'N/A';
+                    ?>
                         <div class="service-tag" onclick="searchService('<?= htmlspecialchars($service) ?>')">
                             <?= htmlspecialchars($service) ?>
+                            <span class="price-tooltip"><?= number_format($price, 0, ',', ' ') ?> MGA</span>
                         </div>
                     <?php endforeach; ?>
                 </div>

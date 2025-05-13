@@ -3,12 +3,18 @@ session_start();
 $id_user = $_SESSION['id_users'];
 include('database.php');
 
-$contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
+// Correction de la requête pour récupérer les contacts
+$contacts = $bdd->prepare("
+    SELECT DISTINCT a.id_assurances, a.nom, a.image
     FROM messages m
-    JOIN assurances a ON a.id_assurances = m.destinataire_id
-    WHERE m.expediteur_type = 'user' AND m.expediteur_id = $id_user
-    OR (m.destinataire_type = 'user' AND m.destinataire_id = $id_user)")
-    ->fetchAll(PDO::FETCH_ASSOC);
+    JOIN assurances a ON (
+        (m.expediteur_type = 'assurance' AND m.expediteur_id = a.id_assurances AND m.destinataire_id = ? AND m.destinataire_type = 'user')
+        OR 
+        (m.destinataire_type = 'assurance' AND m.destinataire_id = a.id_assurances AND m.expediteur_id = ? AND m.expediteur_type = 'user')
+    )
+");
+$contacts->execute([$id_user, $id_user]);
+$contacts = $contacts->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +32,8 @@ $contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
         </div>
         <?php foreach ($contacts as $contact): ?>
             <div class="contact" onclick="loadMessages(<?= $contact['id_assurances'] ?>, 'assurance')">
-                <img src="<?= $contact['image'] ?>" alt="">
-                <div><?= $contact['nom'] ?></div>
+                <img src="<?= htmlspecialchars($contact['image']) ?>" alt="">
+                <div><?= htmlspecialchars($contact['nom']) ?></div>
             </div>
         <?php endforeach; ?>
     </div>
@@ -37,7 +43,7 @@ $contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
         <div class="chat-box" id="chat-box"></div>
         <form class="chat-form" onsubmit="sendMessage(event)">
             <textarea id="message" placeholder="Écrivez un message..."></textarea>
-            <button>🗨️</button>
+            <button type="submit">🗨️</button>
         </form>
     </div>
 
@@ -56,16 +62,16 @@ $contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
                     const header = document.getElementById("chat-header");
                     chatBox.innerHTML = '';
                     data.messages.forEach(msg => {
-                    const div = document.createElement("div");
-                    div.className = 'message ' + (msg.expediteur_type === 'user' ? 'from-me' : 'from-other');
-                    div.innerHTML = `
-                        <div class="message-content">${msg.message.replace(/\n/g, '<br>')}</div>
-                        <div class="message-time">
-                            ${new Date(msg.date_envoi).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
-                        </div>
-                `;
-                    chatBox.appendChild(div);
-                });
+                        const div = document.createElement("div");
+                        div.className = 'message ' + (msg.expediteur_type === 'user' ? 'from-me' : 'from-other');
+                        div.innerHTML = `
+                            <div class="message-content">${msg.message.replace(/\n/g, '<br>')}</div>
+                            <div class="message-time">
+                                ${new Date(msg.date_envoi).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                            </div>
+                        `;
+                        chatBox.appendChild(div);
+                    });
                     header.innerText = data.nom;
                     chatBox.scrollTop = chatBox.scrollHeight;
                 });
@@ -78,6 +84,9 @@ $contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
 
             fetch('envoyer_message.php', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
                 body: new URLSearchParams({
                     message,
                     to_id: currentId,
@@ -93,8 +102,8 @@ $contacts = $bdd->query("SELECT DISTINCT a.id_assurances, a.nom, a.image
             if (currentId) loadMessages(currentId, currentType);
         }, 3000);
     </script>
-<a href="logout.php" class="logout-btn" title="Déconnexion">
-    Déconnexion
-</a>
+    <a href="logout.php" class="logout-btn" title="Déconnexion">
+        Déconnexion
+    </a>
 </body>
 </html>

@@ -71,9 +71,9 @@
             </div>
         </div>
         
-        <div class="copyright">
+        <!-- <div class="copyright">
             ©Copyright 2025. All Rights Reserved. Mad(Assur) - Powered By G2 GL L3
-        </div>
+        </div> -->
     </footer>
 </body>
 </html>

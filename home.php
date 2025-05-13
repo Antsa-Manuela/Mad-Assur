@@ -1,23 +1,27 @@
 <?php
-session_start();
+// session_start();
 include('header.php');
 include('database.php');
 
-// Initialiser la session comparaison
+/* Initialisation */
 if (!isset($_SESSION['comparaison'])) {
     $_SESSION['comparaison'] = [];
 }
 
-// Message de notification
+/* Gestion des notifications */
 if (isset($_SESSION['notification'])) {
     $notification = $_SESSION['notification'];
     unset($_SESSION['notification']);
 }
 
-// Ajouter/retirer une assurance à comparer (GESTION AJAX)
+/* Gestion AJAX de la comparaison */
 if (isset($_GET['compare']) && is_numeric($_GET['compare'])) {
     $idCompare = (int)$_GET['compare'];
-    $response = ['success' => false, 'message' => '', 'count' => count($_SESSION['comparaison'])];
+    $response = [
+        'success' => false, 
+        'message' => '', 
+        'count' => count($_SESSION['comparaison'])
+    ];
     
     if (in_array($idCompare, $_SESSION['comparaison'])) {
         $_SESSION['comparaison'] = array_diff($_SESSION['comparaison'], [$idCompare]);
@@ -38,13 +42,18 @@ if (isset($_GET['compare']) && is_numeric($_GET['compare'])) {
     exit();
 }
 
-// Réinitialiser comparaison
+/* Réinitialisation de la comparaison */
 if (isset($_GET['reset'])) {
     $_SESSION['comparaison'] = [];
     $_SESSION['notification'] = "Comparaison réinitialisée";
     
     if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
-        $response = ['success' => true, 'message' => "Comparaison réinitialisée", 'count' => 0, 'redirect' => 'home.php'];
+        $response = [
+            'success' => true, 
+            'message' => "Comparaison réinitialisée", 
+            'count' => 0, 
+            'redirect' => 'home.php'
+        ];
         header('Content-Type: application/json');
         echo json_encode($response);
     } else {
@@ -53,7 +62,7 @@ if (isset($_GET['reset'])) {
     exit();
 }
 
-// Récupérer tous les services distincts
+/* Récupération des services */
 $liste_services = [];
 $req = $bdd->query("SELECT services FROM assurances");
 while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
@@ -67,11 +76,12 @@ while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
 }
 sort($liste_services);
 
-// Construction de la requête avec filtres
+/* Construction de la requête avec filtres */
 $assurances = [];
 $where = [];
 $params = [];
 
+// Filtre recherche
 if (isset($_GET['q']) && trim($_GET['q']) !== '') {
     $q = '%' . trim($_GET['q']) . '%';
     $where[] = "(nom LIKE ? OR services LIKE ?)";
@@ -79,6 +89,7 @@ if (isset($_GET['q']) && trim($_GET['q']) !== '') {
     $params[] = $q;
 }
 
+// Filtre score
 if (!empty($_GET['score'])) {
     $score = $_GET['score'];
     if ($score == 'A') $where[] = "( (rse_fort + capital_humain_fort + experience_client_fort + impact_local_fort)/4 ) >= 80";
@@ -86,6 +97,7 @@ if (!empty($_GET['score'])) {
     elseif ($score == 'C') $where[] = "( (rse_fort + capital_humain_fort + experience_client_fort + impact_local_fort)/4 ) BETWEEN 60 AND 69";
 }
 
+// Filtres critères
 $filters = ['rse', 'capital', 'experience', 'impact'];
 foreach ($filters as $f) {
     if (!empty($_GET[$f]) && is_numeric($_GET[$f])) {
@@ -94,11 +106,13 @@ foreach ($filters as $f) {
     }
 }
 
+// Filtre service
 if (!empty($_GET['service']) && in_array($_GET['service'], $liste_services)) {
     $where[] = "services LIKE ?";
     $params[] = '%' . $_GET['service'] . '%';
 }
 
+/* Exécution de la requête */
 $sql = "SELECT * FROM assurances";
 if (!empty($where)) {
     $sql .= " WHERE " . implode(" AND ", $where);
@@ -160,35 +174,31 @@ $assurances = $stmt->fetchAll();
 </head>
 <body data-comparaison="<?= implode(',', $_SESSION['comparaison'] ?? []) ?>">
 
-<?php if (!empty($notification)): ?>
-    <div class="notification <?= strpos($notification, 'Maximum') !== false || strpos($notification, 'retirée') !== false ? 'error' : 'success' ?>"><?= htmlspecialchars($notification) ?></div>
-    <script>
-        setTimeout(() => {
-            const notif = document.querySelector('.notification');
-            if (notif) {
-                notif.style.opacity = '0';
-                setTimeout(() => notif.remove(), 500);
-            }
-        }, 2000);
-    </script>
-<?php endif; ?>
+    <?php if (!empty($notification)): ?>
+        <div class="notification <?= strpos($notification, 'Maximum') !== false || strpos($notification, 'retirée') !== false ? 'error' : 'success' ?>">
+            <?= htmlspecialchars($notification) ?>
+        </div>
+        <script>
+            setTimeout(() => {
+                const notif = document.querySelector('.notification');
+                if (notif) {
+                    notif.style.opacity = '0';
+                    setTimeout(() => notif.remove(), 500);
+                }
+            }, 2000);
+        </script>
+    <?php endif; ?>
 
-<?php if (!empty($assurances)): ?>
-    <div class="result-count"><?= count($assurances) ?> assurance(s) trouvée(s)</div>
-<?php else: ?>
-    <div class="result-count">Aucune assurance trouvée</div>
-<?php endif; ?>
+    <?php if (!empty($assurances)): ?>
+        <div class="result-count"><?= count($assurances) ?> assurance(s) trouvée(s)</div>
+    <?php else: ?>
+        <div class="result-count">Aucune assurance trouvée</div>
+    <?php endif; ?>
 
-<main class="main-content">
-    <?php
-    if (isset($_GET['page']) && $_GET['page'] === 'comparaison') {
-        include('comparaison.php');
-    } else {
-        include('contain.php');
-    }
-    ?>
-</main>
+    <main class="main-content">
+        <?= isset($_GET['page']) && $_GET['page'] === 'comparaison' ? include('comparaison.php') : include('contain.php') ?>
+    </main>
 
-<?php include('footer.php'); ?>
+    <?php include('footer.php'); ?>
 </body>
 </html>
